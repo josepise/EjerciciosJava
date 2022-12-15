@@ -18,7 +18,7 @@ is divided into following sections:
   - applet
   - cleanup
 
--->
+        -->
 <project xmlns:if="ant:if" xmlns:j2seproject1="http://www.netbeans.org/ns/j2se-project/1" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxrpc="http://www.netbeans.org/ns/j2se-project/jax-rpc" xmlns:unless="ant:unless" basedir=".." default="default" name="JavaApplication6-impl">
     <fail message="Please build using Ant 1.8.0 or higher.">
         <condition>
@@ -32,7 +32,7 @@ is divided into following sections:
                 ======================
                 INITIALIZATION SECTION 
                 ======================
-    -->
+            -->
     <target name="-pre-init">
         <!-- Empty placeholder for easier customization. -->
         <!-- You can override this target in the ../build.xml file. -->
@@ -1446,7 +1446,7 @@ is divided into following sections:
     </target>
     <!--
                 end of pre NB72 profiling section
-    -->
+            -->
     <target if="netbeans.home" name="-profile-check">
         <condition property="profiler.configured">
             <or>
@@ -1535,7 +1535,7 @@ is divided into following sections:
                 =========================
                 TEST COMPILATION SECTION
                 =========================
-    -->
+            -->
     <target depends="init,compile" if="have.tests" name="-pre-pre-compile-test">
         <mkdir dir="${build.test.classes.dir}"/>
     </target>
@@ -1634,7 +1634,7 @@ is divided into following sections:
                 =======================
                 TEST EXECUTION SECTION
                 =======================
-    -->
+            -->
     <target depends="init" if="have.tests" name="-pre-test-run">
         <mkdir dir="${build.test.results.dir}"/>
     </target>
@@ -1671,7 +1671,7 @@ is divided into following sections:
                 =======================
                 TEST DEBUGGING SECTION
                 =======================
-    -->
+            -->
     <target depends="init,compile-test-single,-pre-test-run-single" if="have.tests" name="-debug-start-debuggee-test">
         <fail unless="test.class">Must select one file in the IDE or set test.class</fail>
         <j2seproject3:test-debug excludes="" includes="${javac.includes}" testClass="${test.class}" testincludes="${javac.includes}"/>
@@ -1695,7 +1695,7 @@ is divided into following sections:
                 =========================
                 APPLET EXECUTION SECTION
                 =========================
-    -->
+            -->
     <target depends="init,compile-single" name="run-applet">
         <fail unless="applet.url">Must select one file in the IDE or set applet.url</fail>
         <j2seproject1:java classname="sun.applet.AppletViewer">
@@ -1708,7 +1708,7 @@ is divided into following sections:
                 =========================
                 APPLET DEBUGGING  SECTION
                 =========================
-    -->
+            -->
     <target depends="init,compile-single" if="netbeans.home" name="-debug-start-debuggee-applet">
         <fail unless="applet.url">Must select one file in the IDE or set applet.url</fail>
         <j2seproject3:debug classname="sun.applet.AppletViewer">
